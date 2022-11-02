@@ -208,10 +208,13 @@
     "max-len": [
       "error",
       {
-        "code": 870,
+        "code": 80,
         "tabWidth": 2,
         "ignoreUrls": true,
-        "ignorePattern": "goog.(module|require)"
+        "ignorePattern": [
+          "goog.(module|require)",
+          "<svg./i$"
+        ]        
       }
     ],
     "new-cap": "error",
