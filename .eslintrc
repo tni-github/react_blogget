@@ -211,10 +211,7 @@
         "code": 80,
         "tabWidth": 2,
         "ignoreUrls": true,
-        "ignorePattern": [
-          "goog.(module|require)",
-          "<svg./i$"
-        ]        
+        "ignorePattern": "goog.(module|require)|d=('|\")(.)*('|\")"
       }
     ],
     "new-cap": "error",
