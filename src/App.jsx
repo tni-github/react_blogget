@@ -1,12 +1,12 @@
 import React from 'react';
-import HeaderComponent from './components/HeaderComponent';
-import MainComponent from './components/MainComponent';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
   return (
     <React.Fragment>
-      <HeaderComponent />
-      <MainComponent />
+      <Header />
+      <Main />
     </React.Fragment>
   );
 }
