@@ -21,7 +21,7 @@ const LIST = [
 export const Tabs = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdown, setIsDropdown] = useState(true);
-  const [isMenuChecked, setIsMenuChecked] = useState('');
+  const [menuChecked, setMenuChecked] = useState('');
 
   const handleResize = () => {
     if (document.documentElement.clientWidth < 768) {
@@ -49,7 +49,7 @@ export const Tabs = () => {
         <Text As='div' className={style.wrapperBtn}>
           <button className={style.btn}
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-            {isMenuChecked ? isMenuChecked : 'Меню'}
+            {menuChecked ? menuChecked : 'Меню'}
             <ArrowIcon width={15} height={15}/>
           </button>
         </Text>)}
@@ -63,7 +63,7 @@ export const Tabs = () => {
           <Text As='li' className={style.item} key={id}>
             <button
               className={style.btn}
-              onClick={() => setIsMenuChecked(value)}>
+              onClick={() => setMenuChecked(value)}>
               {value}
               {Icon && <Icon width={30} height={30}/>}
             </button>
