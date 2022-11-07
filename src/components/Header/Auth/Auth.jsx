@@ -26,15 +26,17 @@ export const Auth = ({ token, delToken }) => {
       headers: {
         Authorization: `bearer ${token}`,
       },
-    }).then(response => response.json())
+    }).then(response => {
+      if (response.status === 401) {
+        delToken();
+      }
+      return response.json();
+    })
       .then(({ name, icon_img: iconImg }) => {
         const img = iconImg.replace(/\?.*$/, '');
         setAuth({ name, img });
       })
       .catch((err) => {
-        if (err.status === 401) {
-          delToken();
-        }
         console.error(err);
         setAuth({});
       });
