@@ -31,8 +31,8 @@ export const Auth = ({ token, delToken }) => {
         const img = iconImg.replace(/\?.*$/, '');
         setAuth({ name, img });
       })
-      .catch((response, err) => {
-        if (response.status === 401) {
+      .catch((err) => {
+        if (err.status === 401) {
           delToken();
         }
         console.error(err);
